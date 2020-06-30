@@ -1,0 +1,17 @@
+{
+  "name": "blog",
+  "version": "0.0.1",
+  "description": "my blog",
+  "main": "index.js",
+  "author": "hoovoi",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "vuepress dev blog --open --no-clear-screen",
+    "build": "vuepress build blog"
+  },
+  "devDependencies": {
+    "@vuepress/theme-blog": "^2.2.0",
+    "vuepress": "^1.5.2"
+  }
+}
