@@ -4,7 +4,7 @@ module.exports = {
   base: 'build',
   title: 'vuepress default theme',
   description: 'demo',
-  dest: 'build',
+  dest: 'docs',
   theme: '@vuepress/blog',
   themeConfig: {
     logo: '/logo.png',
