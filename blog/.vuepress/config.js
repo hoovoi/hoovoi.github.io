@@ -1,6 +1,7 @@
 const path = require('path')
 
 module.exports = {
+  base: 'build',
   title: 'vuepress default theme',
   description: 'demo',
   dest: 'build',
