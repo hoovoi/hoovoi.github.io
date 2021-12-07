@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding-top: 2px;
+            background-image: linear-gradient(to right top, green 50%, #fff 50%);
+            background-repeat: no-repeat;
+            background-size: 100% calc( 100% - 100vh + 1px );
+            min-height: 200vh;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            background: #fff;
+            width: 100%;
+            height: calc( 100vh - 2px )
+        }
+
+        .loading {
+            position: relative;
+            width: 100px;
+            height: 20px;
+            border: 1px solid #333;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .loading::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 500%;
+            top: 0;
+            left: 0;
+            background-image: repeating-linear-gradient(45deg, green, green 10px, transparent, transparent 20px);
+            animation: move 1s linear infinite;
+        }
+        @keyframes move {
+            form {
+                top: 0%;
+            }
+            to {
+                top: -400%
+            }
+        }
+    </style>
+</head>
+<body>
+    利用渐变背景实现滚动进度条 <br>
+    高度上需要减去100vh 一个屏幕高度<br>
+    同理，实现的loading动画
+    <div class="loading"></div>
+</body>
+</html>

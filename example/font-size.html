@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --global--Fontsize--small: 1.4rem;
+            --global--Fontsize--medium: 1.6rem;
+            --global--Fontsize--large: 2.4rem;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        @media only screen and ( -webkit-min-device-pixed-ratio: 2.0 ){
+            html {
+                background-color: #ccc;
+            }
+        }
+        @media only screen and ( -webkit-min-device-pixed-ratio: 3.0 ){ 
+            html {
+                background-color: #000;
+            }
+        }
+        * {
+            margin: 0;
+        }
+        .font-size-small {
+            font-size: var(--global--Fontsize--small)
+        }
+        .font-size-medium {
+            font-size: var(--global--Fontsize--medium)
+        }
+        .font-size-large {
+            font-size: var(--global--Fontsize--large)
+        }
+        .font-size-clamp {
+            font-size: clamp(var(--global--Fontsize--small), -0.8750rem + 5.2083vw, var(--global--Fontsize--large));
+        }
+    </style>
+</head>
+<body>
+    <p class="font-size-small">文本测试</p>
+    <p class="font-size-medium">文本测试</p>
+    <p class="font-size-large">文本测试</p>
+    <p class="font-size-clamp">文本测试</p>
+</body>
+</html>

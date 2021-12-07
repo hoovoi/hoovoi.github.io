@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    :root {
+      --item-name-width: 30px;
+      --left-width: 50px;
+    }
+
+    ul, li {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .wrap {
+      width: 800px;
+    }
+
+    .item {
+      margin-left: var(--left-width);
+      box-shadow: -1px 0 #333;
+    }
+
+    .item:last-child {
+      box-shadow: unset;
+    }
+
+    .item>.header {
+      display: flex;
+      margin-left: -30px;
+      background: #fff;
+      justify-content: space-between;
+    }
+    .item>.header .title {
+      flex: 1;
+    }
+
+    .item>.header .name {
+      width: 80px;
+    }
+
+    .item>.content {
+      margin-left: var(--left-width)
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+    }
+
+    .item-header .item-header-text {
+      flex: 1;
+    }
+
+    .j-replay {
+      color: green;
+      cursor: pointer;
+    }
+
+    .date {
+      color: #ccc;
+    }
+    
+    .item-content-content {
+      display: flex;
+    }
+    .item-content-text {
+      flex: 1;
+    }
+
+    .item-content {
+      padding: 10px 0;
+    }
+
+    .header-replay {
+      margin: 0 15px;
+    }
+    .name-replay {
+      color: blue
+    }
+
+    .item-content-row {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <ul class="wrap">
+    <!-- <li class="item">
+      <div class="header">
+        <span class="name">张瑞棉花</span>
+        <span class="title">发起申请</span>
+        <span class="date">2012-12-12 12:12:12</span>
+      </div>
+      <div class="content">
+        <div class="item-header">
+          <div class="item-header-text">
+            尾款还有1200没有收回来哦。尾款还有1200没有收回来哦，尾款还有1200没有收回来哦
+          </div>
+          <span class="replay j-replay">回复</span>
+        </div>
+        <ul>
+          <li class="item-content">
+            <div class="item-content-row">
+              <div class="item-content-text"><span class="name-replay">张大棉</span><span class="header-replay">回复</span><span class="name-replay">张二棉</span></div>
+              <span class="date">2012-12-12 12:12:12</span>
+            </div>
+            <div class="item-content-row">
+              <div class="item-content-text">已经给到财务了。</div>
+              <span class="replay j-replay">回复</span>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-content-row">
+              <div class="item-content-text"><span class="name-replay">张大棉</span><span class="header-replay">回复</span><span class="name-replay">张二棉</span></div>
+              <span class="date">2012-12-12 12:12:12</span>
+            </div>
+            <div class="item-content-row">
+              <div class="item-content-text">已经给到财务了。</div>
+              <span class="replay j-replay">回复</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="item">
+      <div class="header">
+        <span class="name">张瑞棉花</span>
+        <span class="title">发起申请</span>
+        <span class="date">2012-12-12 12:12:12</span>
+      </div>
+      <div class="content">
+        <div class="item-header">
+          <div class="item-header-text">
+            尾款还有1200没有收回来哦。尾款还有1200没有收回来哦，尾款还有1200没有收回来哦
+          </div>
+          <span class="replay j-replay">回复</span>
+        </div>
+        <ul>
+          <li class="item-content">
+            <div class="item-content-row">
+              <div class="item-content-text"><span class="name-replay">张大棉</span><span class="header-replay">回复</span><span class="name-replay">张二棉</span></div>
+              <span class="date">2012-12-12 12:12:12</span>
+            </div>
+            <div class="item-content-row">
+              <div class="item-content-text">已经给到财务了。</div>
+              <span class="replay j-replay">回复</span>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-content-row">
+              <div class="item-content-text"><span class="name-replay">张大棉</span><span class="header-replay">回复</span><span class="name-replay">张二棉</span></div>
+              <span class="date">2012-12-12 12:12:12</span>
+            </div>
+            <div class="item-content-row">
+              <div class="item-content-text">已经给到财务了。</div>
+              <span class="replay j-replay">回复</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li> -->
+  </ul>
+  
+
+<script>
+
+  let data = [
+    {
+      name: '赖嘉敏',
+      title: '发起申请',
+      date: '2020-01-16 09:10:38',
+      content: '尾款还有1200没有收回来哦。尾款还有1200没有收回来哦，尾款还有1200没有收回来哦'
+    },
+    {
+      name: '赖嘉敏',
+      title: '发起申请',
+      date: '2020-01-16 09:10:38',
+      content: '尾款还有1200没有收回来哦。尾款还有1200没有收回来哦，尾款还有1200没有收回来哦',
+      list: [
+        {
+          name1: '赖嘉敏',
+          name2: '张瑞绵',
+          date: '2020-01-16 09:10:38',
+          content: '已经给到财务了。'
+        },
+        {
+          name1: '赖嘉敏',
+          name2: '张瑞绵',
+          date: '2020-01-16 09:10:38',
+          content: '已经给到财务了。'
+        }
+      ]
+    },
+    {
+      name: '赖嘉敏',
+      title: '发起申请',
+      date: '2020-01-16 09:10:38',
+      content: '尾款还有1200没有收回来哦。尾款还有1200没有收回来哦，尾款还有1200没有收回来哦',
+      list: [
+        {
+          name1: '赖嘉敏',
+          name2: '张瑞绵',
+          date: '2020-01-16 09:10:38',
+          content: '已经给到财务了。'
+        },
+        {
+          name1: '赖嘉敏',
+          name2: '张瑞绵',
+          date: '2020-01-16 09:10:38',
+          content: '已经给到财务了。'
+        }
+      ]
+    }
+  ]
+
+  const render = function(d){
+    let listWrap = document.querySelector(".wrap");
+    let html = '';
+    d.forEach((item, index)=> {
+      const header = `
+        <div class="header">
+          <span class="name">张瑞棉花</span>
+          <span class="title">发起申请</span>
+          <span class="date">2012-12-12 12:12:12</span>
+        </div>
+      `
+      const content = `
+        <div class="item-header">
+          <div class="item-header-text">
+            尾款还有1200没有收回来哦。尾款还有1200没有收回来哦，尾款还有1200没有收回来哦
+          </div>
+          <span class="replay j-replay">回复</span>
+        </div>
+      `
+      const list = renderItem(item.list)
+      html+= `
+        <li class="item">
+          ${header}
+          <div class="content">
+            ${content}
+            <ul>
+              ${list}
+            </ul>
+          </div>
+        </li>
+      `
+    })
+    listWrap.innerHTML = html;
+    document.body.addEventListener("click", function(e){
+      const target = e.target;
+      if(/j-replay/.test(target.className) &&  target.tagName === "SPAN" ){
+        let val = prompt("","");
+        console.log("回复："+ val)
+      }
+    })
+  }
+
+  const renderItem = function(d){
+    let html = ''
+    d = d || [];
+    d.forEach((item,index)=> {
+      html+= `
+        <li class="item-content">
+          <div class="item-content-row">
+            <div class="item-content-text"><span class="name-replay">张大棉</span><span class="header-replay">回复</span><span class="name-replay">张二棉</span></div>
+            <span class="date">2012-12-12 12:12:12</span>
+          </div>
+          <div class="item-content-row">
+            <div class="item-content-text">已经给到财务了。</div>
+            <span class="replay j-replay">回复</span>
+          </div>
+        </li>
+      `
+    })
+    return html;
+  }
+
+  render(data)
+
+</script>
+
+</body>
+</html>

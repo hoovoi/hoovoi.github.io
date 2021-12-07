@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      width: 100px;
+      height: 160px;
+      background: #eee;
+    }
+    .box {
+      clip-path: polygon(30px 0, calc( 100% - 30px ) 0, 100% 30px, 100% calc( 100% - 30px ), calc( 100% - 30px ) 100%, 30px 100%, 0 calc( 100% - 30px ), 0 30px )
+    }
+    .circle {
+      clip-path: circle(50px)
+    }
+    .ellipse {
+      clip-path: ellipse(100px 160px at 0 0)
+    }
+  </style>
+</head>
+<body>
+  <code>
+    <pre>
+      inset(xxx) 长方形
+    </pre>
+    <pre>
+      circle(40%) 圆形
+    </pre>
+    <pre>
+      ellipse(130px 140px at 10% 20%) 椭圆
+    </pre>
+    <pre>
+      polygon(50% 0, 100% 50%, 50% 100%) 多边形
+    </pre>
+  </code>
+  <div class="box">
+
+  </div>
+  <div class="circle">
+
+  </div>
+  <div class="ellipse">
+    参数 (x轴的半径， y轴的半径 at x y)
+  </div>
+</body>
+</html>

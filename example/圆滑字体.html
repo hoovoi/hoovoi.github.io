@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p {
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+    }
+    p:nth-child(2) {
+      font-weight: bold;
+    }
+    p:nth-child(3) {
+      -webkit-font-smoothing: none;
+    }
+    p:nth-child(4) {
+      -webkit-font-smoothing: antialiased;
+    }
+    p:nth-child(5) {
+      -webkit-font-smoothing: subpixel-antialiased;
+    }
+  </style>
+</head>
+<body>
+  <p >这是一段测试文本。</p>
+  <p >这是一段测试文本。</p>
+  <p >这是一段测试文本。</p>
+  <p >这是一段测试文本。亚像素级</p>
+  <p >这是一段测试文本。全像素</p>
+  <p >这是一段测试文本。默认</p>
+</body>
+</html>

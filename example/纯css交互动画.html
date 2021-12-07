@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input {
+      display: block;
+      margin-bottom: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    input:last-of-type {
+      margin-bottom: 0;
+    }
+    button {
+      margin-top: 20px;
+      width: 80%
+    }
+    .wrap {
+      position: relative;
+      margin: 300px auto;
+      width: 320px;
+      height: 240px;
+      border-radius: 5px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .animation {
+      position: absolute;
+      top: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      opacity: 0.5;
+      transition: all 1s ease-out;
+      background-color: #eee;
+    }
+    .account:focus ~ .animation{
+      /* background-color: green; */
+      background: 
+        /* 线性渐变不能和径向、圆锥渐变共存 */
+        /* linear-gradient( 90deg, green 0%, red 100%) no-repeat, */
+        /* radial-gradient(#AA445F 28%,#0000 1q,49.5%,#AA445F 1q,71%,#E38F66 71%) no-repeat, */
+        conic-gradient(white 90deg, 0, green 180deg, 0, red 270deg, 0, yellow 360deg) no-repeat #000;
+      background-size: 100% 100%;
+    }
+    .password:focus ~ .animation {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <div class="wrap">
+      <input type="text" class="account" />
+      <input type="text" class="password" />
+      <button type="submit">提交</button>
+      <div class="animation"></div>
+    </div>
+  </form>
+</body>
+</html>

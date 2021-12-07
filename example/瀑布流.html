@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrap {
+      column-count: 4;
+      column-gap: 15;
+      row-gap: 15;
+      color: #fff;
+      text-align: center;
+    }
+    .wrap>div {
+      /* break-inside: avoid; */
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div style="height: 100px; background-color: #aaa;">100px</div>
+    <div style="height: 300px; background-color: #333;">300px</div>
+    <div style="height: 500px; background-color: #ccc;">500px</div>
+    <div style="height: 200px; background-color: #555;">200px</div>
+    <div style="height: 600px; background-color: #eee;">600px</div>
+    <div style="height: 800px; background-color: #777;">800px</div>
+    <div style="height: 150px; background-color: #000;">150px</div>
+  </div>
+</body>
+</html>
